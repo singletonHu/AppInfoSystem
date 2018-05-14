@@ -7,7 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-//import cn.smbms.pojo.User;
+import cn.appsys.pojo.BackendUser;
+import cn.appsys.pojo.DevUser;
 import cn.appsys.tools.Constants;
 
 public class SysInterceptor extends HandlerInterceptorAdapter 
@@ -18,12 +19,13 @@ public class SysInterceptor extends HandlerInterceptorAdapter
 	{
 		logger.debug("SysInterceptor preHandle!");
 		HttpSession session = request.getSession();
-	/*	User user = (User)session.getAttribute(Constants.USER_SESSION);
-		if (null == user)
+		DevUser user = (DevUser)session.getAttribute(Constants.DEV_USER_SESSION);
+		BackendUser bdUser = (BackendUser)session.getAttribute(Constants.BACKEND_USER_SESSION);
+		if (null == user && bdUser == null)
 		{
-			response.sendRedirect(request.getContextPath() + "/401.jsp");
+			response.sendRedirect(request.getContextPath() + "/403.jsp");
 			return false;
-		}*/
+		}
 		return true;
 	}
 }

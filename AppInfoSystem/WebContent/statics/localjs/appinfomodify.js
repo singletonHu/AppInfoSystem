@@ -34,6 +34,7 @@ function delfile(id){
 				alert("删除成功！");
 				$("#uploadfile").show();
 				$("#logoFile").html('');
+				$("#logoPicPath").val("");
 			}else if(data.result == "failed"){
 				alert("删除失败！");
 			}

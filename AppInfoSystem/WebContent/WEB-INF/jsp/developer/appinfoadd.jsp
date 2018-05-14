@@ -36,6 +36,7 @@
               <input id="APKName" class="form-control col-md-7 col-xs-12" 
               	data-validate-length-range="20" data-validate-words="1" name="APKName"   required="required"
               	placeholder="请输入APK名称" type="text">
+              	<span id = "APKNameMes"></span>
             </div>
           </div>
           

@@ -9,6 +9,7 @@ function delfile(id){
 				alert("删除成功！");
 				$("#uploadfile").show();
 				$("#apkFile").html('');
+				$("#downloadLink").val("");
 			}else if(data.result == "failed"){
 				alert("删除失败！");
 			}

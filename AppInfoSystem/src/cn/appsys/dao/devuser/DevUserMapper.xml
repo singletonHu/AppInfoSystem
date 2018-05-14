@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtdk"> 
+<mapper namespace="cn.appsys.dao.devuser.DevUserMapper">
+	<select id="getLoginUserByDevCode" parameterType = "String" resultType = "DevUser"> 
+		select id,devCode,devName,devPassword,devEmail,devInfo,createdBy,creationDate,modifyBy,modifyDate from dev_user
+		<where>
+			<if test="devCode != null and devCode != ''">and devCode = #{devCode}</if>
+		</where>
+	</select>
+</mapper>

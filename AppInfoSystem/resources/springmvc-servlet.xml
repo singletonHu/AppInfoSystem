@@ -13,9 +13,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
       <!-- 扫描注解包 -->
-	<context:component-scan base-package="cn.smbms.controller" />
-	<context:component-scan base-package="cn.smbms.service" />
-	<context:component-scan base-package="cn.smbms.pojo"/>
+	<context:component-scan base-package="cn.appsys.controller" />
 	
 	<!-- 静态文件访问配置 -->
 	<mvc:resources location="/statics/" mapping="/statics/**" />
@@ -43,7 +41,7 @@
 	
 	<!-- 配置MultipartResolver，用于上传文件，使用spring的CommonsMultipartResolver -->
 	<bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value = "5000000" />
+		<property name="maxUploadSize" value = "500000000" />
 		<property name="defaultEncoding" value = "UTF-8" />
 	</bean>
 	
@@ -77,8 +75,12 @@
 	<!-- 自定义系统拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/sys/**"/>
-			<bean class = "cn.smbms.interceptor.SysInterceptor" />
+			<mvc:mapping path="/dev/flatform/**"/>
+			<bean class = "cn.appsys.initerceptor.SysInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/manager/backend/**"/>
+			<bean class = "cn.appsys.initerceptor.SysInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	

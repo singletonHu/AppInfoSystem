@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtdk">
+<mapper namespace="cn.appsys.dao.backenduser.BackendUserMapper">
+	<!-- 后台用户登录 -->
+	<select id="backendUserLogin" resultType="BackendUser">
+		select b.*, (select valueName from data_dictionary d where d.valueId = b.userType and typeCode = 'USER_TYPE') userTypeName from backend_user b 
+		<where>
+			<if test="userCode != null and userCode != ''">and userCode = #{userCode}</if>
+			<if test="userPassword != null and userPassword != ''">and userPassword = #{userPassword}</if>
+		</where>
+	</select>
+</mapper>

@@ -34,6 +34,7 @@
 	<link href='${pageContext.request.contextPath }/statics/localcss/appinfolist.css' rel='stylesheet'>
 </head>
 <body class="nav-md footer_fixed">
+ 	
 	<div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col menu_fixed">
@@ -175,3 +176,4 @@
 			<!-- /top navigation -->
 			<div class="right_col" role="main">
 				<div class="">
+<input type="hidden" id="path" name="path" value="${pageContext.request.contextPath }"/>

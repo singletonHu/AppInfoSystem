@@ -3,8 +3,8 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 	<metadata></metadata>
 	<defs>
-		<font id="fontawesomeregular" horiz-adv-x="1536">
-			<font-face units-per-em="1792" ascent="1536" descent="-256" >
+		<font id="fontawesomeregular" horiz-adv-x="1536" >
+			<font-face units-per-em="1792" ascent="1536" descent="-256">
 				<font-face-src>
 					<font-face-name name="Glyphicons Halflings"/>
 				</font-face-src>
